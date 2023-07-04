@@ -27,20 +27,20 @@ By the end of this course, you will:
 
 The course will cover the following key topics:
 
-1. Introduction to Python
+### 1. Introduction to Python
 - Installing Python and setting up the development environment.
 - Running Python scripts and using the interactive mode.
 - Understanding basic syntax and data types, including numbers, strings, lists, tuples, and dictionaries.
 - Working with variables, assignments, and operators.
 - Exploring control flow with if-else statements and loops.
 
-2. Functions and Modules
+### 2. Functions and Modules
 - Defining and calling functions, and understanding the concept of scope.
 - Working with parameters, arguments, and return statements.
 - Differentiating between built-in functions and user-defined functions.
 - Introduction to modules and libraries, including importing and using functions from external modules.
 
-3. Data Structures and Algorithms
+### 3. Data Structures and Algorithms
 - Manipulating lists, including indexing, slicing, and common list methods.
 - Understanding tuples as immutable sequences.
 - Working with dictionaries, accessing values, and iterating over keys and values.
@@ -48,20 +48,20 @@ The course will cover the following key topics:
 - Manipulating strings, string formatting, and common string operations.
 - Reading from and writing to files, including text and CSV files.
 
-4. Object-Oriented Programming (OOP)
+### 4. Object-Oriented Programming (OOP)
 - Understanding the concepts of classes and objects.
 - Creating and instantiating classes, defining attributes, and implementing methods.
 - Exploring inheritance and polymorphism to reuse and extend functionality.
 - Encapsulating data and methods using access modifiers.
 - Emphasizing the principles of encapsulation, inheritance, and polymorphism in object-oriented design.
 
-5. Error Handling and Exceptions
+### 5. Error Handling and Exceptions
 - Handling exceptions using try-except blocks and understanding the flow of exception handling.
 - Raising exceptions and catching specific exception types.
 - Using the finally block for cleanup operations.
 - Employing exception handling to gracefully handle errors and unexpected situations in Python programs.
 
-6. Python Libraries and Frameworks
+### 6. Python Libraries and Frameworks
 - Utilizing Numpy for numerical computing and working with multidimensional arrays.
 - Leveraging Pandas for data manipulation, analysis, and exploring tabular data structures.
 - Visualizing data with Matplotlib and Seaborn, including creating plots, charts, and graphs.
@@ -69,25 +69,25 @@ The course will cover the following key topics:
 - Developing full-stack web applications with Django, a powerful and feature-rich web framework.
 - Exploring TensorFlow or PyTorch for machine learning and deep learning applications.
 
-7. Working with APIs and Web Scraping
+### 7. Working with APIs and Web Scraping
 - Making HTTP requests to web APIs using the requests library.
 - Parsing and manipulating JSON and XML responses.
 - Authenticating and accessing APIs using tokens or API keys.
 - Extracting data from websites through web scraping using libraries like Beautiful Soup.
 
-8. Database Integration
+### 8. Database Integration
 - Establishing connections to databases such as SQLite, MySQL, or PostgreSQL.
 - Executing SQL queries using Python, including SELECT, INSERT, UPDATE, and DELETE statements.
 - Retrieving and manipulating data from databases using Python.
 - Managing database transactions and error handling.
 
-9. Testing and Debugging
+### 9. Testing and Debugging
 - Writing test cases using unittest or pytest frameworks.
 - Debugging techniques and using the Python debugger (pdb).
 - Handling errors and exceptions during testing.
 - Employing testing and debugging to ensure code correctness and reliability.
 
-10. Additional Topics
+### 10. Additional Topics
 - Regular expressions for pattern matching and text manipulation.
 - Multithreading and multiprocessing for concurrent and parallel programming.
 - Utilizing decorators and generators for advanced Python programming techniques.
