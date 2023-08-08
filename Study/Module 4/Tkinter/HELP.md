@@ -199,3 +199,88 @@ That's how you can use dialog boxes with Tkinter to interact with users and disp
 - `askokcancel()`: This displays a question message box with "OK" and "Cancel" buttons. It is used when the user can either proceed with an action or cancel it.
 
 - `askretrycancel()`: This displays a question message box with "Retry" and "Cancel" buttons. It is used when the user can choose to retry an action that failed or cancel it.
+
+---
+# Do I need to create a new class for every new window?
+
+Whether to create a new class for a new window depends on the complexity and functionality of that window. In some cases, creating a new class for each new window can help organize your code and make it more maintainable. It also allows you to encapsulate the behavior and data associated with that window into a separate entity.
+
+However, for simple and straightforward pop-up or dialog windows, you might not need a separate class. Instead, you can create those windows within the context of the main class or function.
+
+Here are some guidelines to consider when deciding whether to create a new class for a new window:
+
+1. `Complexity`: If the new window has a lot of widgets, functionality, and interactions, it's a good idea to create a separate class for it. This keeps the code organized and makes it easier to manage.
+
+2. `Reusability`: If the same type of window might be used in multiple places within the application, creating a new class can make it reusable, and you can instantiate it wherever needed.
+
+3. `Modularity`: If the new window serves a specific purpose, such as showing product details or user settings, it might be a good idea to create a separate class to keep related code together.
+
+4. `Code Clarity`: Having separate classes for different windows can improve the clarity and readability of your code, especially if you have a lot of GUI elements and functionality.
+
+5. `Simplicity`: For simple pop-up windows or dialogs with minimal functionality, it might be more straightforward to create them within the main class or function without creating a new class.
+
+6. `Context`: Consider the overall structure of your application and how these windows fit into the larger picture. If the window is a crucial part of the application's functionality, a separate class can be beneficial.
+
+In the end, it's a balance between code organization, reusability, and simplicity. For small applications with a few simple pop-up windows, creating separate classes might not be necessary. However, for larger and more complex applications, using separate classes for different windows can help you maintain a clear and structured codebase.
+
+## Examples
+
+### With Classes:
+```python
+import tkinter as tk
+
+class SettingsWindow(tk.Toplevel):
+    def __init__(self, master):
+        super().__init__(master)
+        self.title("Settings")
+        self.geometry("300x200")
+
+        self.label = tk.Label(self, text="Settings Window")
+        self.label.pack(pady=10)
+
+        self.close_button = tk.Button(self, text="Close", command=self.destroy)
+        self.close_button.pack(pady=10)
+
+class App(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title("Main Application")
+        self.geometry("400x300")
+
+        self.settings_button = tk.Button(self, text="Open Settings", command=self.open_settings)
+        self.settings_button.pack(pady=50)
+
+    def open_settings(self):
+        settings_window = SettingsWindow(self)
+
+if __name__ == "__main__":
+    app = App()
+    app.mainloop()
+```
+
+### Without classes:
+
+```python
+import tkinter as tk
+
+def open_settings():
+    settings_window = tk.Toplevel()
+    settings_window.title("Settings")
+    settings_window.geometry("300x200")
+
+    label = tk.Label(settings_window, text="Settings Window")
+    label.pack(pady=10)
+
+    close_button = tk.Button(settings_window, text="Close", command=settings_window.destroy)
+    close_button.pack(pady=10)
+
+if __name__ == "__main__":
+    app = tk.Tk()
+    app.title("Main Application")
+    app.geometry("400x300")
+
+    settings_button = tk.Button(app, text="Open Settings", command=open_settings)
+    settings_button.pack(pady=50)
+
+    app.mainloop()
+```
