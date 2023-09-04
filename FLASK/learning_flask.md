@@ -93,10 +93,3 @@ Teaching Flask in 64 hours is an extensive endeavor, and it requires careful pla
 **Hour 53-64: Complex Exercise**
 - Students work on a comprehensive project that ties together all the main parts of Flask, including authentication, database management, RESTful API, real-time features, and deployment.
 
-### File 2: Exercises and Solutions
-For each of the topics above, create exercises and solutions that gradually increase in complexity. Ensure that each exercise challenges students to apply the knowledge they've gained.
-
-### File 3: Mini Projects and Complex Exercise
-Provide detailed project descriptions and specifications for the mini projects and the complex exercise. Include requirements, expected functionality, and evaluation criteria.
-
-Remember to encourage students to ask questions, seek help when needed, and actively engage with the material. Assess their progress through assignments, quizzes, and code reviews to ensure they are mastering Flask concepts effectively.
