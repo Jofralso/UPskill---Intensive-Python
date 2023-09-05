@@ -113,7 +113,7 @@ logout_user()
 
 ---
 
-Example Tutorial
+## Example Tutorial
 
 2. **User Registration and Login**:
 
