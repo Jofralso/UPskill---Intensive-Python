@@ -71,5 +71,3 @@ from app import app
 if __name__ == '__main__':
     app.run(debug=True)
 ```
-
-With this directory structure and code, you have a basic Flask web application. You can expand it by adding more routes, templates, and logic as needed for your specific project. You can also include database models, forms, and other extensions as your project requirements grow.

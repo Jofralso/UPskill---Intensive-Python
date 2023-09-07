@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Post</title>
+</head>
+<body>
+    <h1>Create Post</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>{{ form.title.label }}
+        <br> 
+        {{ form.title }}</p>
+        <p>{{ form.content.label }} 
+        <br>
+        {{ form.content }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,14 @@
+Exercise 2: Create a Simple Blog
+
+In this exercise, students will create a basic blog application where they can add and view blog posts. Each blog post should have a title and content.
+
+Set up a Flask application with SQLAlchemy and a SQLite database.
+Create a Post model with id, title, and content fields.
+Create routes for:
+Viewing a list of blog posts (the homepage).
+Creating a new blog post.
+Viewing an individual blog post.
+Implement form validation for creating a new blog post to ensure both title and content are filled out.
+Store the blog posts in the database.
+Display the list of blog posts on the homepage with links to view individual posts.
+When a user clicks on a blog post, show the full post with its title and content.
