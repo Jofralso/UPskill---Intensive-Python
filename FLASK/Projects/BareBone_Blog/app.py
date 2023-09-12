@@ -109,6 +109,7 @@ def create_post():
 def edit_post(post_id):
     post = Post.query.get_or_404(post_id)
     if post.author != current_user:
+        flash("You don't have permission to edit this post.", 'danger')
         return redirect(url_for('dashboard'))
 
     form = PostForm()
@@ -121,7 +122,26 @@ def edit_post(post_id):
     elif request.method == 'GET':
         form.title.data = post.title
         form.content.data = post.content
-    return render_template('edit_post.html', form=form)
+    return render_template('edit_post.html', form=form, post=post)
+
+
+@app.route('/delete_post/<int:post_id>', methods=['GET', 'POST'])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        flash("You don't have permission to delete this post.", 'danger')
+        return redirect(url_for('dashboard'))
+    
+    if request.method == 'POST':
+        db.session.delete(post)
+        db.session.commit()
+        flash('Your post has been deleted!', 'success')
+        return redirect(url_for('dashboard'))
+
+    return render_template('delete_post.html', post=post)
+
+
 
 @app.route('/logout')
 @login_required

@@ -6,11 +6,11 @@
     {{ form.csrf_token }}
     <div class="form-group">
         {{ form.title.label }}
-        {{ form.title }}
+        {{ form.title(class="form-control") }} {# Add class attribute to the input field #}
     </div>
     <div class="form-group">
         {{ form.content.label }}
-        {{ form.content }}
+        {{ form.content(class="form-control") }} {# Add class attribute to the textarea field #}
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Save Changes</button>
