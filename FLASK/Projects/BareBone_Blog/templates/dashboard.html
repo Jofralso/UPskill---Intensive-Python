@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Welcome, {{ current_user.username }}!</h2>
+<div class="dashboard-actions">
+    <a href="{{ url_for('create_post') }}" class="btn btn-primary">Create Post</a>
+</div>
+<div class="user-posts">
+    <h3>Your Posts</h3>
+    {% for post in user_posts %}
+    <div class="post">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content }}</p>
+        <div class="post-actions">
+            <a href="{{ url_for('edit_post', post_id=post.id) }}" class="btn btn-secondary">Edit</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
