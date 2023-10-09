@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Personal Dashboard</title>
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css')}}">        <!-- Bootstrap style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}">
+    <!-- Icons -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!-- Start HEADER -->
+    <div class="tm-header">
+        <div class="container-fluid">
+            <div class="tm-header-inner">
+                <a href="#" class="navbar-brand tm-site-name">Styx Blog</a>
+
+
+                <!-- navbar -->
+                <nav class="navbar tm-main-nav">
+
+                    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                        &#9776;
+                    </button>
+                    
+                    <div class="collapse navbar-toggleable-sm" id="tmNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/about" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="/login" class="nav-link">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/contact" class="nav-link">Contact</a>
+                            </li>
+                        </ul>                        
+                    </div>
+                    
+                </nav>  
+
+            </div>                                  
+        </div>            
+    </div>
+    <!-- End HEADER -->
+
+
+
+
+    <!-- Begin Side Bar Logged In -->
+
+    
+    <section class = 'dashboard-section'>
+      {% if current_user.is_authenticated %}
+        <h3>Welcome to your dashboard, {{current_user.username}}!</h3>
+
+
+          <div class="sidebar">
+            <div class="logo-details">
+              <div class="logo_name"></div>
+              <i class="bx bx-menu" id="btn"></i>
+            </div>
+            <ul class="nav-list">
+              <li>
+                <i class="bx bx-search"></i>
+                <input type="text" placeholder="Search..." />
+                <span class="tooltip">Search</span>
+              </li>
+              <li>
+                <a href="/dashboard">
+                  <i class="bx bx-grid-alt"></i>
+                  <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+              </li>
+
+              <li>
+                <a href="/create_post">
+                  <i class="bx bx-plus"></i>
+                  <span class="links_name">Create Post</span>
+                </a>
+                <span class="tooltip">Create Post</span>
+              </li>
+
+              <li>
+                <a href="#">
+                  <i class="bx bx-chat"></i>
+                  <span class="links_name">Blog Posts</span>
+                </a>
+                <span class="tooltip">Blog Posts</span>
+              </li>
+
+              <li>
+                <a href="#">
+                  <i class="bx bx-heart"></i>
+                  <span class="links_name">Saved Posts</span>
+                </a>
+                <span class="tooltip">Saved Posts</span>
+              </li>
+
+              <li>
+                <a href="#">
+                  <i class="bx bx-cog"></i>
+                  <span class="links_name">Settings</span>
+                </a>
+                <span class="tooltip">Settings</span>
+              </li>
+
+              <li class="profile">
+                <div class="profile-details">
+                  <img src="{{ url_for('static', filename = 'img/saraalexramos.jpg')}}" alt="profileImg" />
+                  <div class="name_job">
+                      <div class="name">{{ current_user.username }}</div>
+                  </div>
+                </div>
+                <a href="/logout">
+                  <i class="bx bx-log-out" id = "log_out"></i>
+                  <span class="links_name">Dashboard</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+      {% endif %}
+    </section>
+    <!-- End Side Bar Logged In -->
+    <br><br>
+
+    
+    <div class="user-posts">
+        <h3>Your Posts</h3>
+        {% for post in user_posts %}
+
+        <div class="tm-content-box">
+          <!-- <img src="img/tm-img-310x180-1.jpg" alt="Image" class="tm-margin-b-20 img-fluid"> -->
+          <h4 class="tm-margin-b-20 tm-gold-text">{{ post.title }}</h4>
+          <p class="tm-margin-b-20">{{ post.content [:200]}} (...)</p>
+          <a href="{{ url_for('edit_post', post_id = post.id) }}" class="btn btn-secondary float-right text-right">Edit</a> 
+          <a href="{{ url_for('delete_post', post_id = post.id) }}" class="btn btn-secondary float-right text-right">Delete</a> 
+        </div>  
+
+      <!-- '''
+        <div class="post">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+            <div class="post-actions">
+                <a href="{{ url_for('edit_post', post_id = post.id) }}" class="btn btn-secondary">Edit</a>
+            </div>
+        </div>''' -->
+
+        {% endfor %}
+    </div>
+
+
+    </section>
+    
+
+    
+
+   
+    
+    
+
+
+    <!-- load JS files -->
+    <script src="{{ url_for('static', filename = 'js/jquery-1.11.3.min.js')}}"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> <!-- Tether for Bootstrap, http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h --> 
+    <script src="{{ url_for('static', filename = 'js/bootstrap.min.js')}}"></script>                 <!-- Bootstrap (http://v4-alpha.getbootstrap.com/) -->
+    <script src="{{ url_for('static', filename = 'js/script.js')}}"></script>  
+</body>
+</html>

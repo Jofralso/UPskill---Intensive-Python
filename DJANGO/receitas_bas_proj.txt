@@ -1,0 +1,30 @@
+Exercise: Recipe Management System
+Task:
+Create a Django project and application for managing recipes.
+
+Steps:
+
+Project Setup:
+
+Create a new Django project named "RecipeProject."
+Create a Django app named "RecipeApp" within the project.
+Define a Model:
+
+Define a Django model for a recipe. Include attributes such as recipe name, ingredients, instructions, and author.
+Make and Apply Migrations:
+
+Create and apply migrations to set up the database schema for the recipe model.
+Admin Page:
+
+Register the recipe model with the Django admin and customize the admin page to display recipe information effectively.
+Create Views and URLs:
+
+Create views to list all recipes, view details of a recipe, and create/edit a recipe.
+Map appropriate URLs for these views.
+Templates and Forms:
+
+Build Django templates to display recipes, a form for creating/editing a recipe, and integrate a form for submitting new recipes.
+Authentication and User Management:
+
+Implement user authentication, allowing users to sign up and sign in.
+Ensure that each recipe is associated with the logged-in user.

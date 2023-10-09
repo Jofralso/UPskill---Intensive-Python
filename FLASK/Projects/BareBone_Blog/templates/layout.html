@@ -21,7 +21,10 @@
         {% if messages %}
         <div class="flash-messages">
             {% for message in messages %}
-            <div class="flash-message {{ message[1] }}">{{ message[0] }}</div>
+
+            <div class="flash-message">
+                {{ message }}
+            </div>
             {% endfor %}
         </div>
         {% endif %}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css')}}">        <!-- Bootstrap style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}">
+    <!-- Icons -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Start HEADER -->
+    <div class="tm-header">
+        <div class="container-fluid">
+            <div class="tm-header-inner">
+                <a href="#" class="navbar-brand tm-site-name">Styx Blog</a>
+                
+                <!-- navbar -->
+                <nav class="navbar tm-main-nav">
+
+                    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                        &#9776;
+                    </button>
+                    
+                    <div class="collapse navbar-toggleable-sm" id="tmNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="/about" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/login" class="nav-link">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/contact" class="nav-link">Contact</a>
+                            </li>
+                        </ul>                        
+                    </div>
+                    
+                </nav>  
+
+            </div>                                  
+        </div>            
+    </div>
+    <!-- End HEADER -->
+
+    
+
+
+    <div class="tm-about-img-container">
+            
+    </div>
+
+    <section class="tm-section">
+        <div class="container-fluid">
+            <div class="row tm-2-rows-sm-swap">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 tm-2-rows-sm-down-2">
+                    
+                    <h3 class="tm-gold-text">Sidebar Links</h3>
+                    
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="#" class="tm-text-link">Lorem ipsum dolor sit</a></li>
+                            <li><a href="#" class="tm-text-link">Tincidunt non faucibus placerat</a></li>
+                            <li><a href="#" class="tm-text-link">Vestibulum tempor ac lectus</a></li>
+                            <li><a href="#" class="tm-text-link">Fusce non turpis euismod</a></li>
+                            <li><a href="#" class="tm-text-link">Nam in augue consectetur</a></li>
+                            <li><a href="#" class="tm-text-link">Text Link Color #006699</a></li>
+                        </ul>
+                    </nav>   
+
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 tm-2-rows-sm-down-1">
+                    <h3 class="tm-gold-text">Pellentesque fermentum mauris</h3>
+                    <p>Vivamus accumsan blandit ligula. Sed lobortis efficitur sapien</p>
+                    <p>Quisque vel sem eu turpis ullamcorper euismod. Praesent quis nisi ac augue luctus viverra. Sed et dui nisi. Fusce vitae dapibus justo. Pellentesque accumsan est ac posuere imperdiet. Curabitur eros mi, lacinia at euismod quis, dapibus vel ligula. Ut sodales erat vitae nunc tempor mollis. Donec tempor lobortis tortor, in feugiat massa facilisis sed. Ut dignissim viverra pretium. In eu justo maximus turpis feugiat finibus scelerisque nec eros.</p>
+                    <p>
+                    Classic Template provides a great flexibility to arrange the content in any way you like. Please tell your friends about templatemo. Nam sem neque, finibus id sem pharetra, cursus porttitor ligula. Praesent aliquam fermentum dui, vitae venenatis libero vulputate ac. Fusce bibendum scelerisque magna eget iaculis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- load JS files -->
+    <script src="static/js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> <!-- Tether for Bootstrap, http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h --> 
+    <script src="static/js/bootstrap.min.js"></script>                 <!-- Bootstrap (http://v4-alpha.getbootstrap.com/) -->
+</body>
+</html>

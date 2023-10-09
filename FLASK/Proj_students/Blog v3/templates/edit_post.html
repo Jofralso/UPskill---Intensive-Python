@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" href="static/css/style.css"> 
+</head>
+<body>
+    <!-- Start HEADER -->
+    <div class="tm-header">
+        <div class="container-fluid">
+            <div class="tm-header-inner">
+                <a href="#" class="navbar-brand tm-site-name">Styx Blog</a>
+                
+                <!-- navbar -->
+                <nav class="navbar tm-main-nav">
+
+                    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                        &#9776;
+                    </button>
+                    
+                    <div class="collapse navbar-toggleable-sm" id="tmNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/about" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="/login" class="nav-link">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/contact" class="nav-link">Contact</a>
+                            </li>
+                        </ul>                        
+                    </div>
+                    
+                </nav>  
+
+            </div>                                  
+        </div>            
+    </div>
+    <!-- End HEADER -->
+
+    <section class="tm-form-section">
+        {% block content %}
+        <h2>Edit Post</h2>
+        <form method="POST">
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ form.title.label }}
+                {{ form.title }}
+            </div>
+            <div class="form-group">
+                {{ form.content.label }}
+                {{ form.content }}
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </form>
+        {% endblock %}
+    </section>
+
+
+
+    <!-- load JS files -->
+    <script src="static/js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> <!-- Tether for Bootstrap, http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h --> 
+    <script src="static/js/bootstrap.min.js"></script>                 <!-- Bootstrap (http://v4-alpha.getbootstrap.com/) -->
+</body>
+</html>
+
+
+

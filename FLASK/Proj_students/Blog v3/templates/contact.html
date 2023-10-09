@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact me</title>
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css')}}">        <!-- Bootstrap style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}">
+    <!-- Icons -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Start HEADER -->
+    <div class="tm-header">
+        <div class="container-fluid">
+            <div class="tm-header-inner">
+                <a href="#" class="navbar-brand tm-site-name">Styx Blog</a>
+                
+                <!-- navbar -->
+                <nav class="navbar tm-main-nav">
+
+                    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                        &#9776;
+                    </button>
+                    
+                    <div class="collapse navbar-toggleable-sm" id="tmNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/about" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/login" class="nav-link">Login</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="/contact" class="nav-link">Contact</a>
+                            </li>
+                        </ul>                        
+                    </div>
+                    
+                </nav>  
+
+            </div>                                  
+        </div>            
+    </div>
+    <!-- End HEADER -->
+
+    <section class="tm-form-section">
+        <h3 class="tm-gold-text tm-form-title">Contact Us</h3>
+        <p class="tm-form-description">Here is a form to contact us. We will respond as soon as possible.</p> 
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message, category in messages %}
+                        <li class="alert alert-{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="" class="tm-contact-form">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label for="name">Name</label>
+                {{ form.name(class="form-control", placeholder="Enter your name") }}
+                <label for="email">Email</label>
+                {{ form.email(class="form-control", placeholder="Enter your email") }}
+                <label for="message">Message</label>
+                {{ form.message(class="form-control", placeholder="Enter your message") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </section>
+
+
+    <!-- load JS files -->
+    <script src="static/js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> <!-- Tether for Bootstrap, http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h --> 
+    <script src="static/js/bootstrap.min.js"></script>                 <!-- Bootstrap (http://v4-alpha.getbootstrap.com/) -->
+    <script>     
+   
+        /* Google map
+        ------------------------------------------------*/
+        var map = '';
+        var center;
+
+        function initialize() {
+            var mapOptions = {
+                zoom: 16,
+                center: new google.maps.LatLng(13.758468,100.567481),
+                scrollwheel: false
+            };
+        
+            map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
+
+            google.maps.event.addDomListener(map, 'idle', function() {
+              calculateCenter();
+            });
+        
+            google.maps.event.addDomListener(window, 'resize', function() {
+              map.setCenter(center);
+            });
+        }
+
+        function calculateCenter() {
+            center = map.getCenter();
+        }
+
+        function loadGoogleMap(){
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
+            document.body.appendChild(script);
+        }
+    
+        // DOM is ready
+        $(function() {
+
+            // Google Map
+            loadGoogleMap();
+        });
+
+    </script>  
+</body>
+</html>

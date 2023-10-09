@@ -36,7 +36,7 @@ At line:1 char:1
     + CategoryInfo          : SecurityError: (:) [], PSSecurityException
     + FullyQualifiedErrorId : UnauthorizedAccess
 ```
-You need to activate scripting via PowerShell using the following command:
+You need to activate scripting via PowerShell in Administrator mode using the following command:
 ```bash
 Set-ExecutionPolicy RemoteSigned
 ```
