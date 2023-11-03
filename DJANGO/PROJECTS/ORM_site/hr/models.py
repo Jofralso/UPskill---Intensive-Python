@@ -56,7 +56,7 @@ class Job(models.Model):
 
 class Assignment(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
-    job = models.ForeignKey(Job, on_delete=models.CASCADE)
+    position = models.ForeignKey(Job, on_delete=models.CASCADE)
     begin_date = models.DateField()
     end_date = models.DateField(default=date(9999, 12, 31))
 
